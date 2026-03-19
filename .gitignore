@@ -177,9 +177,18 @@ pyrightconfig.json
 .DS_*
 logs
 **/*.backup.*
+*.backup
 **/*.back.*
 
+### SQLite Database ###
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+lumilingo.db
+
 node_modules
+**/node_modules
 bower_components
 
 *.sublime*
@@ -189,5 +198,12 @@ thumb
 sketch
 
 # End of https://www.toptal.com/developers/gitignore/api/python,react
+
+### uv ###
+# uv stores project-wide configurations in .uv.toml
+.uv.toml
+# uv cache
+.uv/
+# Note: uv.lock should be committed for reproducibility
 
 .personal_log.md
