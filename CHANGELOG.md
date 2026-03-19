@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Updated project documentation to reflect current architecture
+- Updated database primary keys from integers to UUIDs for improved portability and scalability
 
 ### Fixed
 - Resolved CORS issues preventing frontend from communicating with backend

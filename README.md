@@ -15,7 +15,8 @@ LumiLingo is a cross-platform language learning application that combines curate
 lumi-lingo/
 ├── backend/          # Python FastAPI backend
 │   ├── main.py       # API endpoints and business logic
-│   └── requirements.txt  # Python dependencies
+│   ├── pyproject.toml    # Python dependencies (managed by uv)
+│   └── uv.lock         # Locked dependencies
 ├── frontend/         # React frontend
 │   ├── src/          # Source code
 │   ├── public/       # Static assets
@@ -35,7 +36,8 @@ lumi-lingo/
 
 ### Prerequisites
 
-- Python 3.8+
+- Python 3.12+
+- [uv](https://github.com/astral-sh/uv) - Fast Python package installer
 - Node.js 16+
 - npm 8+
 
@@ -43,10 +45,15 @@ lumi-lingo/
 
 ```bash
 cd backend
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-python main.py
+uv sync  # Install dependencies from pyproject.toml
+uv run python main.py  # Run with uv
+```
+
+To install uv:
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+# Or using pip:
+pip install uv
 ```
 
 ### Frontend Setup
